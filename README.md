@@ -1,11 +1,11 @@
 ## Wander Bite Git Workflow
-### Whole Repo Setup
-1. **(Only do once)** Clone repository using command `git clone https://www.github.com/tl-smith/WanderBite`
+### Whole Repo Setup (only do once)
+1. Clone repository using command `git clone https://www.github.com/tl-smith/WanderBite`
 2. Change into the directory using command `cd WanderBite`
-3. Create and move into `dev` branch using command `git checkout -b dev`
-4. Pull changes from the remote `dev` branch using command `git pull origin dev`
-5. **(Only do once)** Instantiate git commit message template using command `git config commit.template .gitcommitmsg.txt`
-6. _(Optional)_ **(Only do once)** If you want to edit commit messages in VSCode instead of the terminal, use command `git config core.editor "code --wait"`
+3. Create and move into `develop` branch using command `git checkout -b develop`
+4. Pull changes from the remote `develop` branch using command `git pull origin develop`
+5. Instantiate git commit message template using command `git config commit.template .gitcommitmsg.txt`
+6. _(Optional)_ If you want to edit commit messages in VSCode instead of the terminal, use command `git config core.editor "code --wait"`
 7. ***Note***: When you make commits, run command `git commit` with no message. That way the template will pop open, and once you add your changes and save, it will make the commit with that message.
 
 ### Backend Folder Instructions
@@ -19,16 +19,16 @@
 
 ### Contributing to the repo
 1. Create and move into new feature branch using command `git checkout -b feature-<name-of-task>`. Make sure they are small enough so commit messages aren't too long
-2. Pull latest changes from `dev` branch using command `git pull origin dev`
+2. Pull latest changes from `develop` branch using command `git pull origin develop`
 3. Make your changes, and commit them using command `git commit`
 4. Once you've made all your changes, push them to the origin version of your branch using command `git push -u origin feature-<name-of-task>`
-5. Then in Github, open a pull request from `origin/feature-<name-of-feature>` to `origin/dev` branch.
+5. Then in Github, open a pull request from `origin/feature-<name-of-feature>` to `origin/develop` branch.
 6. Ask someone to take a look at it, then merge with button **Merge Pull Request**
 7. Pull from `dev` branch at least once a day so your feature branch is up-to-date
 8. **Note**: Try to add the associated feature branch to your current Project ticket so that when branch is merged, ticket will close.
 
 ### For finalized changes (once we finish a phase, i.e. Backend Setup, Frontend, Deployment)
-1. Open a pull request in Github from the `origin/dev` branch to `origin/main`.
+1. Open a pull request in Github from the `origin/develop` branch to `origin/main`.
 2. Ask someone to review it (will need to press an Approve button)
 3. Merge pull request
 
