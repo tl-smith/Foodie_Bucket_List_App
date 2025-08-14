@@ -1,11 +1,15 @@
-import React from 'react';
+import Header from "../components/header"
+import Hero from "../components/Hero"
+import HowItWorks from "../components/HowItWorks"
+import Footer from "../components/Footer"
 
-function Home() {
+export default function Home() {
   return (
-    <div>
-      <h1>Welcome to the Home Page!</h1>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <Hero />
+      <HowItWorks />
+      <Footer />
     </div>
-  );
+  )
 }
-
-export default Home;
