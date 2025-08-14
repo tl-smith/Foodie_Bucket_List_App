@@ -8,7 +8,8 @@ import Login from './pages/Login.jsx'
 import SignUp from './pages/SignUp.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import BucketList from './pages/BucketList.jsx';
-// import './index.css'
+import './index.css'
+
 
 const root = document.getElementById("root");
 
@@ -17,7 +18,7 @@ ReactDOM.createRoot(root).render(
     <BrowserRouter>
       <Routes>
 
-        <Route path="/home" element={< Home />} />
+        <Route path="/" element={< Home />} />
         <Route path="/about" element={< About />} />
         <Route path="/contact" element={< Contact />} />
         <Route path="/login" element={< Login />} />
@@ -30,3 +31,4 @@ ReactDOM.createRoot(root).render(
   
 
 );
+
