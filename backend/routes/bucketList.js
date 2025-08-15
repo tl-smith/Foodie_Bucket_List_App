@@ -96,8 +96,36 @@ router.get('/:bucketListId', async (req, res) => {
     }
 });
 
-router.put('/:bucketListId', async (req, res) => {
-    res.send("PUT /bucket-lists/:bucketListId In progress");
+// Mark a bucket list with id equal to bucketListId as completed
+router.put('/:bucketListId/completed', async (req, res) => {
+    // Extract the `bucketListId` from the route parameter and convert it to a number
+    const bucketListId = Number(req.params.bucketListId);
+
+    try {
+        // Use Prisma to update the bucketList with the specified ID
+        const bucketList = await prisma.bucketList.update({
+            where: {
+                id: bucketListId,        // Match the bucketList based on its unique ID
+            },
+            data: {
+                completed: true,  // Update the `completed` field to `true`
+            },
+        });
+
+        // Respond with a success status and include the updated bucketList's ID
+        res.status(200).json({
+            success: true,
+            bucketList: bucketList.id,
+        });
+    } catch (error) {
+        // Handle any errors that occur during the update
+        res.status(500).json({
+            success: false,
+            message: "Something went wrong, please try again later",
+        });
+    }
+});
+
 });
 
 router.delete('/:bucketListId', async (req, res) => {
