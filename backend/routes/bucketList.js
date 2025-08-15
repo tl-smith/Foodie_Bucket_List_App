@@ -5,8 +5,9 @@ const router = express.Router();
 
 // Add the routes here
 
+// Get all the user's bucket lists
 router.get('/', async (req, res) => {
-    // Gets all the bucketLists from the database
+    // Get all the bucketLists and their items from the database
     const bucketLists = await prisma.bucketList.findMany({
         include: {
             item: true
