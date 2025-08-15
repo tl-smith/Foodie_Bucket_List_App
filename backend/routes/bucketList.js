@@ -20,38 +20,39 @@ router.get('/', async (req, res) => {
     });
 });
 
+// Create a new bucket list
 router.post('/', async (req, res) => {
-    // res.send("POST /bucket-lists In progress");
      // Destructure `location` and `image` from the request body
     const { location, image} = req.body;
     try {
-        // Use Prisma to create a new todo entry in the database
+        // Use Prisma to create a new bucketList entry in the database
         const newBucketList = await prisma.bucketList.create({
             data: {
                 location,               // Set the location that the bucket list will be set
                 image: image || "",        // Set the `image` to the image url or "" if null
-                item: [],   // Default value for `item` is set to []
+                // FOR TESTING PURPOSES
+                userId: req.body.userId
                 // WILL ADD LATER userId: req.user.sub, // Assign the user ID
             },
         });
         
         // Check if the new bucketList was created successfully
         if (newBucketList) {
-            // Respond with a success status and include the ID of the newly created todo
+            // Respond with a success status and include the ID of the newly created bucketList
             res.status(201).json({
                 success: true,
                 bucketList: newBucketList.id,
             });
         } else {
-            // Respond with a failure status if todo creation failed
+            // Respond with a failure status if bucketList creation failed
             res.status(500).json({
                 success: false,
                 message: "Failed to create new bucketList",
             });
         }
-    } catch (e) {
+    } catch (error) {
         // Log the error for debugging purposes
-        console.log(e);
+        console.log(error);
         // Respond with a generic error message if something goes wrong
         res.status(500).json({
             success: false,
