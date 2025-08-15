@@ -184,6 +184,44 @@ router.delete('/:bucketListId', async (req, res) => {
     }
 });
 
+// Get the list of items in the bucket list with id equal to bucketListId
+router.get('/:bucketListId/items', async (req, res) => {
+    const bucketListId = Number(req.params.bucketListId);
+
+    try {
+        // Gets bucketList item for bucketList with id equal to bucketListId
+        const bucketList = await prisma.bucketList.findUnique({
+            where: {
+                id: bucketListId
+            },
+            include: {
+                item: true,
+                location: false,
+                image: false,
+                completed: false,
+            }
+        });
+        // Responds back to the client with json with a success status and the specific bucketList
+        if (bucketList){
+            res.status(200).json({
+                success: true,
+                bucketListId: bucketList.id,
+                items: bucketList.item
+            });
+        } else{
+            res.status(404).json({
+                success: false,
+                message: `Bucket list with id of ${bucketListId} does not exist.`
+            });
+        }
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Something went wrong, please try again later",
+        });
+    }
+});
+
 });
 
 export default router;
