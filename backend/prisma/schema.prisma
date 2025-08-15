@@ -14,22 +14,12 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-model User{
-  id              Int    @id @default(autoincrement())
-  firstName       String
-  lastName        String
-  email           String @unique
-  location        String
-  bucketList      BucketList[]
-  bucketListItems BucketListItem[]
-}
-
 model BucketList{
-  id        Int    @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   location  String
   image     String?
-  user      User   @relation(fields: [userId], references: [id])
-  userId    Int
+  completed Boolean  @default(false)
+  userId    String
   item      BucketListItem[]
 }
 
@@ -38,8 +28,8 @@ model BucketListItem{
   city       String
   location   String
   food       String
+  completed  Boolean    @default(false)
   bucketList BucketList @relation(fields: [bucketId], references: [id])
   bucketId   Int
-  user       User       @relation(fields: [userId], references: [id])
-  userId     Int
+  userId     String
 }
