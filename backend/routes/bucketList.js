@@ -222,6 +222,60 @@ router.get('/:bucketListId/items', async (req, res) => {
     }
 });
 
+
+// Used this documentation: https://www.prisma.io/docs/orm/prisma-client/queries/relation-queries#add-new-related-records-to-an-existing-record
+
+// Add an item to the bucket list with id equal to bucketListId
+router.post('/:bucketListId/items', async (req, res) => {
+
+    const bucketListId = Number(req.params.bucketListId);
+    // Destructure `city`, `location` and `food` from the request body
+    const { city, location, food} = req.body;
+    try {
+        // Use Prisma to create the bucketList with id equal to bucketListId
+        const bucketList = await prisma.bucketList.findUnique({
+            where : {
+                id: bucketListId
+            },
+        });
+
+        // Create new bucketListItem for specific bucketList
+        const newBucketListItem = await prisma.bucketListItem.create({
+            data: {
+                city,
+                location,
+                food,
+                completed: false,
+                bucketId: bucketListId,
+                userId: bucketList.userId
+            }
+        });
+        
+        // Check if the new bucketList item was created successfully
+        if (newBucketListItem) {
+            // Respond with a success status and include the ID of the newly created item
+            res.status(201).json({
+                success: true,
+                bucketListItem: newBucketListItem.id,
+            });
+        } else {
+            // Respond with a failure status if todo creation failed
+            res.status(500).json({
+                success: false,
+                message: "Failed to create new bucketList item",
+            });
+        }
+    } catch (error) {
+        // Log the error for debugging purposes
+        console.log(error);
+        // Respond with a generic error message if something goes wrong
+        res.status(500).json({
+            success: false,
+            message: "Something went wrong, please try again later",
+        });
+    }
+});
+
 });
 
 export default router;
