@@ -61,8 +61,39 @@ router.post('/', async (req, res) => {
     }
 });
 
+// Get a specific bucket list with id equal to bucketListId
 router.get('/:bucketListId', async (req, res) => {
-    res.send("GET /bucket-lists/:bucketListId In progress");
+    const bucketListId = Number(req.params.bucketListId);
+
+    try {
+        // Gets bucketList with id equal to bucketListId
+        const bucketList = await prisma.bucketList.findUnique({
+            where: {
+                id: bucketListId
+            },
+            include: {
+                item: true
+            }
+        });
+        // Responds back to the client with json with a success status and the specific bucketList
+        if (bucketList){
+            res.status(200).json({
+                success: true,
+                bucketList,
+            });
+        } else{
+            res.status(404).json({
+                success: false,
+                message: `Bucket list with id of ${bucketListId} does not exist.`
+            });
+        }
+    } catch (error) {
+        // Handle any errors that occur during the update
+        res.status(500).json({
+            success: false,
+            message: "Something went wrong, please try again later",
+        });
+    }
 });
 
 router.put('/:bucketListId', async (req, res) => {
