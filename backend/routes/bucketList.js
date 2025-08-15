@@ -156,8 +156,34 @@ router.put('/:bucketListId/not-completed', async (req, res) => {
     }
 });
 
+// Delete a bucket list with an id equal to bucketListId
 router.delete('/:bucketListId', async (req, res) => {
-    res.send("DELETE /bucket-lists/:bucketListId In progress");
+    // Extract the `bucketListId` from the route parameter and convert it to a number
+    const bucketListId = Number(req.params.bucketListId);
+
+    try {
+        // Use Prisma to delete the bucketList with the specified ID
+        await prisma.bucketList.delete({
+            where: {
+            id: bucketListId, // Match the bucketList based on its unique ID
+            completed: true //Make sure the bucketList is completed
+            },
+        });
+
+        // Respond with a success status and confirmation of the deletion
+        res.status(200).json({
+            success: true,
+            bucketList: bucketListId, // Return the deleted bucketList's ID for reference
+        });
+    } catch (error) {
+        // Handle any errors that occur during the deletion process
+        res.status(500).json({
+            success: false,
+            message: "Something went wrong, please try again later",
+        });
+    }
+});
+
 });
 
 export default router;
