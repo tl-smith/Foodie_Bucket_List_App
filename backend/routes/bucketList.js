@@ -276,6 +276,58 @@ router.post('/:bucketListId/items', async (req, res) => {
     }
 });
 
+// Mark item with id equal to itemId of a specific bucket list as completed
+router.put('/:bucketListId/items/:itemId/completed', async (req, res) => {
+    const bucketListId = Number(req.params.bucketListId);
+    const itemId = Number(req.params.itemId);
+    try {
+        // Update the bucketListItem to be marked as completed
+        const bucketList = await prisma.bucketList.update({
+            where: {
+                id: bucketListId
+            },
+            data: {
+                item: {
+                    update: {
+                        where: {
+                            id: itemId
+                        },
+                        data: {
+                            completed: true,
+                        }
+                    },
+                }
+            },
+            include: {
+                item: true
+            }
+        });
+
+        // Check if the bucketList was updated successfully
+        if (bucketList) {
+            // Respond with a success status and include the ID of the newly created bucketListItem
+            res.status(200).json({
+                success: true,
+                bucketListItem: itemId,
+            });
+        } else {
+            // Respond with a failure status if todo creation failed
+            res.status(500).json({
+                success: false,
+                message: "Failed to update bucketList item",
+            });
+        }
+    } catch (error) {
+        // Log the error for debugging purposes
+        console.log(error);
+        // Respond with a generic error message if something goes wrong
+        res.status(500).json({
+            success: false,
+            message: "Something went wrong, please try again later",
+        });
+    }
+});
+
 });
 
 export default router;
