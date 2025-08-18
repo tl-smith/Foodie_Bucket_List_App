@@ -13,9 +13,14 @@
 2. Copy contents of `.env.example` file into a new file `.env`
 3. Get secrets from our channel and add to `.env` file
 4. Install all packages with `npm install`
+5. Run backend server with `npm run dev`
 
 ### Frontend Folder Instructions
-*TBD*...
+1. Change into the frontend directory using `cd frontend`
+2. Create a `.env` file and populate with Supabase credentials for database
+3. **Important**: Make sure the `.env` file name is added to the `.gitignore` file in the `frontend` folder
+4. Install all packages with `npm install`
+5. Run frontend server with `npm run dev`
 
 ### Contributing to the repo
 1. Create and move into new feature branch using command `git checkout -b feature-<name-of-task>`. Make sure they are small enough so commit messages aren't too long
