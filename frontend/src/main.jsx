@@ -10,13 +10,13 @@ import './index.css'
 
 const root = document.getElementById("root");
 
-ReactDOM.createRoot(root).render(  
+ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={< Layout/>}>
-        <Route path="/home" element={< Home />} />
-        <Route path="/about" element={< About />} />
-        <Route path="/dashboard" element={< Dashboard />} />
+      <Route path="/" element={<Layout />}>
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Route>
     </Routes>
   </BrowserRouter>
