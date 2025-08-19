@@ -1,4 +1,9 @@
+## Figma File
+
+[Figma File](https://www.figma.com/design/hgNYVqnJUIz3hVEj7zNEVU/WanderBite-Wireframe?node-id=2-2&t=q0ppqEZVtTJa1HK1-1)
+
 ## Wander Bite Git Workflow
+
 ### Whole Repo Setup (only do once)
 1. Clone repository using command `git clone https://www.github.com/tl-smith/WanderBite`
 2. Change into the directory using command `cd WanderBite`
@@ -16,11 +21,9 @@
 5. Run backend server with `npm run dev`
 
 ### Frontend Folder Instructions
-1. Change into the frontend directory using `cd frontend`
-2. Create a `.env` file and populate with Supabase credentials for database
-3. **Important**: Make sure the `.env` file name is added to the `.gitignore` file in the `frontend` folder
-4. Install all packages with `npm install`
-5. Run frontend server with `npm run dev`
+1. Change into the frontend directory using `cd frontend
+2. Install all packages with `npm install`
+3. Run frontend server with `npm run dev`
 
 ### Contributing to the repo
 1. Create and move into new feature branch using command `git checkout -b feature-<name-of-task>`. Make sure they are small enough so commit messages aren't too long
