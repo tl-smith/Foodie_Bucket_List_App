@@ -36,21 +36,6 @@
   --color-ring: oklch(65% 0.18 40);
 
   --radius: 0.75rem;
-
-  /* Sidebar colors */
-  --color-sidebar-background: oklch(98% 0.02 240);
-  --color-sidebar-foreground: oklch(35% 0.05 240);
-  --color-sidebar-primary: oklch(15% 0.05 240);
-  --color-sidebar-primary-foreground: oklch(98% 0.02 0);
-  --color-sidebar-accent: oklch(96% 0.02 240);
-  --color-sidebar-accent-foreground: oklch(15% 0.05 240);
-  --color-sidebar-border: oklch(92% 0.03 220);
-  --color-sidebar-ring: oklch(70% 0.18 217);
-
-  --gradient-hero: linear-gradient(135deg, oklch(65% 0.18 40), oklch(75% 0.19 45));
-  --gradient-adventure: linear-gradient(135deg, oklch(55% 0.14 200), oklch(70% 0.13 120));
-  --gradient-sunset: linear-gradient(180deg, oklch(65% 0.18 40), oklch(60% 0.16 35));
-  --gradient-food: linear-gradient(135deg, oklch(70% 0.13 120), oklch(65% 0.12 125));
   
   --shadow-warm: 0 10px 40px -15px oklch(65% 0.18 40 / 0.3);
   --shadow-adventure: 0 8px 32px -12px oklch(55% 0.14 200 / 0.25);
