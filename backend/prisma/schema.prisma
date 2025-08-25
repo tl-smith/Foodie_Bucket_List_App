@@ -17,9 +17,9 @@ datasource db {
 model BucketList{
   id        Int      @id @default(autoincrement())
   location  String
+  name      String?
   image     String?
   completed Boolean  @default(false)
-  userId    String
   item      BucketListItem[]
 }
 
@@ -31,5 +31,4 @@ model BucketListItem{
   completed  Boolean    @default(false)
   bucketList BucketList @relation(fields: [bucketId], references: [id])
   bucketId   Int
-  userId     String
 }

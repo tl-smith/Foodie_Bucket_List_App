@@ -23,16 +23,14 @@ router.get('/', async (req, res) => {
 // Create a new bucket list
 router.post('/', async (req, res) => {
      // Destructure `location` and `image` from the request body
-    const { location, image} = req.body;
+    const { location, image, name} = req.body;
     try {
         // Use Prisma to create a new bucketList entry in the database
         const newBucketList = await prisma.bucketList.create({
             data: {
                 location,               // Set the location that the bucket list will be set
                 image: image || "",        // Set the `image` to the image url or "" if null
-                // FOR TESTING PURPOSES
-                userId: req.body.userId
-                // WILL ADD LATER userId: req.user.sub, // Assign the user ID
+                name: name || "",           // Set the `name` to the name or "" if null
             },
         });
         
@@ -247,7 +245,6 @@ router.post('/:bucketListId/items', async (req, res) => {
                 food,
                 completed: false,
                 bucketId: bucketListId,
-                userId: bucketList.userId
             }
         });
         
