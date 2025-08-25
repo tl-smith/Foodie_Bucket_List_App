@@ -1,4 +1,5 @@
 export default function DashboardHero() {
+
   return (
     <div className="bg-orange-500 py-12 px-4">
       <div className="container mx-auto flex items-center justify-center">
