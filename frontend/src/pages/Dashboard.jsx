@@ -2,9 +2,21 @@ import DashboardHero from "../components/DashboardHero";
 import BucketListGrid from "../components/BucketListGrid";
 import BucketList from "../components/BucketList";
 import { useRef } from "react";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+
+async function fetchBucketLists() {
+    const response = await axios.get("http://localhost:8080/bucket-lists");
+    return response.data.bucketLists;
+  }
 
 export default function Dashboard() {
   const dialogRef = useRef(null);
+
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ['bucketLists'],
+    queryFn: fetchBucketLists,
+  });
 
   function openModal(){
     dialogRef.current.showModal();
@@ -27,7 +39,15 @@ export default function Dashboard() {
       </div>
       <BucketList modalRef={dialogRef} handleClose={closeModal}/>
       <div className="py-16">
-        <BucketListGrid />
+        {isLoading && 
+          <p>Loading...</p>
+        }
+        { isError &&
+          <p>Here is the error: {error}</p>
+        }
+        {data && 
+            <BucketListGrid bucketLists={data}/>
+        }
       </div>
     </div>
   )

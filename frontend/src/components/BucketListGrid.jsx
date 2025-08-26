@@ -1,7 +1,6 @@
 import BucketListCard from "./BucketListCard"
 
-export default function BucketListGrid() {
-  const bucketLists = [
+/* const bucketList = [
     {
       id: 1,
       title: "NYC",
@@ -29,11 +28,15 @@ export default function BucketListGrid() {
         { id: 9, text: "Visit local bakeries", completed: false },
       ],
     },
-  ]
+  ] */
+
+export default function BucketListGrid(props) {
+  const { bucketLists } = props;
+  console.log(bucketLists);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">My Bucket lists:</h2>
+      <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Bucket Lists:</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {bucketLists.map((bucketList) => (
