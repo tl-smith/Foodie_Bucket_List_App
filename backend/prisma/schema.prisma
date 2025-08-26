@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model BucketList{
+  id        Int      @id @default(autoincrement())
+  location  String
+  name      String?
+  image     String?
+  completed Boolean  @default(false)
+  item      BucketListItem[]
+}
+
+model BucketListItem{
+  id         Int        @id @default(autoincrement())
+  city       String
+  location   String
+  food       String
+  completed  Boolean    @default(false)
+  bucketList BucketList @relation(fields: [bucketId], references: [id])
+  bucketId   Int
+}
