@@ -18,7 +18,7 @@ WanderBite is a full-stack CRUD web application that lets users explore global d
 
 [Figma File](https://www.figma.com/design/hgNYVqnJUIz3hVEj7zNEVU/WanderBite-Wireframe?node-id=2-2&t=YxjjxenTtIKkQEQH-1)
 
-# How to Contribute
+## How to Contribute
 
 ## Wander Bite Git Workflow
 
