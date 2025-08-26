@@ -4,7 +4,7 @@
 
 WanderBite is a full-stack CRUD web application that lets users explore global destinations and local cuisine in an interactive and engaging way. With a simple click, users can generate random travel locations and food pairings, and save those experiences to a personalized bucket list.
 
----
+
 
 ## ✨ Features
 
