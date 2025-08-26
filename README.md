@@ -2,7 +2,9 @@
 
 **Travel somewhere. Get a random food. Save it to your bucket list.**
 
-WanderBite is a full-stack CRUD web application that lets users explore global destinations and local cuisine in an interactive and engaging way. With a simple click, users can generate random travel locations and food pairings, and save those experiences to a personalized bucket list.
+WanderBite is an immersive full-stack CRUD web application designed for foodies and travelers alike. It blends the thrill of spontaneous adventure with the joy of discovering new cuisines. Users can generate a random global destination and instantly receive a food recommendation native to that region. After "trying" the dish, they save the experience to a personalized, travel-inspired food bucket list.
+
+Whether you're planning your next trip or exploring cultures from home, WanderBite offers a fun, interactive way to connect with global cuisine, track your foodie adventures, and share your journey with others.
 
 
 
