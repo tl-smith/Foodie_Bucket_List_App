@@ -26,7 +26,7 @@ Documentation for the frontend folder — including file purpose, local environm
 
 - React 
 - Vite 
-- JavaScript or TypeScript
+- JavaScript 
 - CSS Modules / Tailwind / Styled Components 
 
 
