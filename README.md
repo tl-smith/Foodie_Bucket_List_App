@@ -1,6 +1,24 @@
+# 🍜 WanderBite
+
+**Travel somewhere. Get a random food. Save it to your bucket list.**
+
+WanderBite is a full-stack CRUD web application that lets users explore global destinations and local cuisine in an interactive and engaging way. With a simple click, users can generate random travel locations and food pairings, and save those experiences to a personalized bucket list.
+
+---
+
+## ✨ Features
+
+- 🌍 Generate a random travel destination
+- 🍱 Get a food suggestion associated with that region
+- ✅ Manage and complete a personal travel-food bucket list
+- 🔐 Secure login and protected API routes
+- 📦 Full-stack architecture using modern web technologies
+
 ## Figma File
 
 [Figma File](https://www.figma.com/design/hgNYVqnJUIz3hVEj7zNEVU/WanderBite-Wireframe?node-id=2-2&t=YxjjxenTtIKkQEQH-1)
+
+# How to Contribute
 
 ## Wander Bite Git Workflow
 
