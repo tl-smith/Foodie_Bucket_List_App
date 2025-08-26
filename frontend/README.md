@@ -44,11 +44,12 @@ Documentation for the frontend folder — including file purpose, local environm
 
 Clone the repo and install dependencies:
 
-
+```
 $ git clone https://github.com/tl-smith/WanderBite.git
 $ cd WanderBite
 $ cd frontend
 $ npm install
+```
 
 
 
@@ -56,17 +57,22 @@ $ npm install
 
 In the frontend/ folder, run:
 
+```
 $ cat .env.example > .env
-
+```
 
 Then update the new .env file with actual values (e.g., backend API URL):
 
+```
 VITE_API_URL=http://localhost:3000
+```
 
 ## Running the Frontend Server
 To start the development server:
 
+```
 $ npm run dev
+```
 
 This will launch the app at http://localhost:5173 (or your configured Vite port).
 
