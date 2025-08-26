@@ -1,15 +1,26 @@
-# WanderBite — Frontend
+# WanderBite: Frontend Setup Instructions
 
-> *Travel somewhere. Get a random food. Snap a pic. Save it to your bucket list.*
+Documentation for the frontend folder — including file purpose, local environment setup, and how to get the application running in development mode.
 
-WanderBite is a CRUD web application that helps users explore the world through food. The frontend is a dynamic, responsive web interface where users can:
+## 📁 Frontend Folder Contents
 
-- 🌍 Choose or generate a random travel destination
-- 🍜 Get a random food suggestion 
-- 📸 Try the food, take/upload a photo
-- 📌 Save the experience to a personalized travel-food bucket list
+| File/Folder | Purpose |
+|-------------|---------|
+| `src/` | Main application source code, including components, pages, and logic |
+| `src/components/` | Reusable UI components (e.g., buttons, forms, cards) |
+| `src/pages/` | Route-specific views (e.g., Home, Explore, BucketList) |
+| `src/services/` | Handles API requests to the backend |
+| `src/assets/` | Static images, icons, and styling assets |
+| `src/App.jsx` | Root component managing route layout |
+| `src/main.jsx` | App entry point, renders to DOM |
+| `public/index.html` | HTML template used by Vite |
+| `vite.config.js` | Vite configuration (aliases, proxy, etc.) |
+| `.env.example` | Template for environment variables |
+| `package.json` | Project dependencies and scripts |
+| `README.md` | This document |
 
 ---
+
 
 ## 🛠 Tech Stack
 
@@ -21,14 +32,35 @@ WanderBite is a CRUD web application that helps users explore the world through 
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- Node.js (v18+ recommended)
-- npm 
+- Node.js 
+- npm
+- Backend server running (`cd backend && npm run dev`)
 
 ### Installation
 
-cd frontend
-npm install
+Clone the repo and install dependencies:
+
+
+$ git clone https://github.com/tl-smith/WanderBite.git
+$ cd WanderBite
+$ cd frontend
+$ npm install
+
+Running the Frontend Server
+
+$ npm run dev
+
+
+## Frontend Features
+
+Destination and food suggestion
+
+Add experiences to a personalized bucket list
+
+Responsive UI for mobile and desktop users
+
+Seamless connection to backend API
