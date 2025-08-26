@@ -20,6 +20,9 @@ Whether you're planning your next trip or exploring cultures from home, WanderBi
 
 [Figma File](https://www.figma.com/design/hgNYVqnJUIz3hVEj7zNEVU/WanderBite-Wireframe?node-id=2-2&t=YxjjxenTtIKkQEQH-1)
 
+## Walkthrough of Web App
+https://github.com/user-attachments/assets/d1f7f72e-9b8a-458f-9752-9884d1bfac34
+
 ## How to Contribute
 
 ## Wander Bite Git Workflow
