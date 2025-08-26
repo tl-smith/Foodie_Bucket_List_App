@@ -45,22 +45,30 @@ Documentation for the frontend folder — including file purpose, local environm
 Clone the repo and install dependencies:
 
 
-$ git clone https://github.com/tl-smith/WanderBite.git
-$ cd WanderBite
-$ cd frontend
-$ npm install
+- git clone https://github.com/tl-smith/WanderBite.git
+- cd WanderBite
+- cd frontend
+- npm install
 
 Running the Frontend Server
 
-$ npm run dev
+- npm run dev
 
 
 ## Frontend Features
 
-Destination and food suggestion
+- Destination and food suggestion
 
-Add experiences to a personalized bucket list
+- Add experiences to a personalized bucket list
 
-Responsive UI for mobile and desktop users
+- Responsive UI for mobile and desktop users
 
-Seamless connection to backend API
+- Seamless connection to backend json
+
+## Branches
+
+- main: Latest stable version of the application
+
+- develop: Actively developed features and fixes
+
+- feature-*: Feature-specific branches in progress
